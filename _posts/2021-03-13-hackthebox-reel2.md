@@ -84,5 +84,16 @@ We will use nishang and base64 encode it:
 <span style="color:blue"><emb>cat Invoke-PowershellTcpOnLine.ps1 | iconv -t utf16le | base64 -w 0</emb></span>
 
 
-And then we send it to get the reverse shell:
+And then we send it to get the reverse shell with `-enc` to decrypt it:
 <img src="/src/rev1.png">
+We can get the user flag.
+
+Next step is to have administrator access to the box or at least find out a way to read the root.txt flag!
+
+In the desktop of k.svensson we see a Sticky Note link wich can be a good start to find some interesting stuff.
+
+We can search for specific files or some content that have specific terms like "password", "psrc", "pssc" or "jea".
+
+The following command helps us to look for files that end with `.log` extension: 
+
+<span style="color:blue"><emb>get-childitem -path C:\ -File -Recurse -Include *.log -ErrorAction SilentlyContinue -Force</emb></span>
