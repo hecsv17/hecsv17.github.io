@@ -100,3 +100,5 @@ The following command helps us to look for files that end with `.log` extension:
 <span style="color:blue"><emb>get-childitem -path C:\ -File -Recurse -Include *.log -ErrorAction SilentlyContinue -Force</emb></span>
 
 The search shows us a file that contains credentials for a new account: <span style="color:red">jea_test_account:Ab!Q@vcg^%@#1</span>
+
+We spent some time reading about JEA (Just Enough Administration), which is a security technology that enables delegated administration for anything managed by PowerShell. Reading the configuration files (C:\Users\k.svensson\Documents\jea_test_account.psrc and C:\Users\k.svensson\Documents\jea_test_account.pssc), we discover that jea_test_account is the only user who can execute a commandlet named `Check-File` which gets the content of a file only if it is inside `D:/` or `C:/ProgramData`
