@@ -123,3 +123,7 @@ PS> $cred = New-Object System.Management.Automation.PSCredential -ArgumentList  
 PS> Enter-PSSession -Computer 10.10.10.210 -credential $cred -ConfigurationName jea_test_account -verbose -debug -Authentication Negotiate</emb></span>
 
 <img src="/src/root1.png">
+
+That's it for today, hope you enjoyed the read!
+
+See you next time.
