@@ -27,6 +27,8 @@ The following command will generate a worldlist using CEWL program (-m command i
 
 
 <span style="color:blue"><emb>cewl -w passlist.txt -m 2 -d 4 -H Cookie:PHPSESSID=q7lmf0h6m81u4propu0r1s4reh --proxy_host 127.0.0.1 --proxy_port 8080 http://10.10.10.210:8080/</emb></span>
+
+
 To generate a wordlist for usernames we make a curl to search endpoint which contains names of blog users.
 
 
