@@ -133,6 +133,7 @@ PS> Enter-PSSession -Computer 10.10.10.210 -credential $cred -ConfigurationName 
 <img src="/src/root2.png">
 
 `Check-File C:\programdata\hecsv\Desktop\root.txt`
+
 <img src="/src/root3.png">
 
 That's it for today, hope you enjoyed the read!
