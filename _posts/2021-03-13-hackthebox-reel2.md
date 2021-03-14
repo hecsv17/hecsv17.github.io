@@ -81,4 +81,4 @@ We will use nishang and base64 encode it:
 
 
 And then we send it to get the reverse shell:
-<img src="src/rev1.png">
+<img src="/src/rev1.png">
