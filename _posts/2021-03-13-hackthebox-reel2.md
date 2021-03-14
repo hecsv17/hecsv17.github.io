@@ -10,8 +10,8 @@ The result shows a bunch of ports: 80, 443, 8080, 600x.
 
 We will start by ports 80 and 443, which only show a default windows IIS server default page. In this case we will launch a directory/files brute force to see if can find some juicy entries.
 
-<emb>dirsearch.py -e php,html -u http://10.10.10.210/ -t 50 -w wordlist.txt</emb>
-<emb>dirsearch.py -e php,html -u https://10.10.10.210/ -t 50 -w wordlist.txt</emb>
+<span style="color:blue"><emb>dirsearch.py -e php,html -u http://10.10.10.210/ -t 50 -w wordlist.txt</emb></span>
+<span style="color:blue"><emb>dirsearch.py -e php,html -u https://10.10.10.210/ -t 50 -w wordlist.txt</emb></span>
 The results show the exixting of exchange server and the web posrtal is accessible through https://10.10.10.210/owa (we can guess from the fisrt look that the exchange version is 2010)
 
 Next step is to build username and password lists to brute force the OWA access. At this point we can use large wordlists but it may take an eternity to finish the attack.
