@@ -17,9 +17,17 @@ The results show the exixting of exchange server and the web posrtal is accessib
 Next step is to build username and password lists to brute force the OWA access. At this point we can use large wordlists but it may take an eternity to finish the attack.
 
 The next open port is 8080 which exposes a social media website called "wallstant". We create a new account and start to look for some vulnerablities on that site. As by now, we will use this site to generate wordlists for username and password.
+
+
 The following command will generate a worldlist using CEWL program (-m command is used for minimum word length, -d command used depth to spider):
+
+
 <emb>cewl -w passlist.txt -m 2 -d 4 -H Cookie:PHPSESSID=q7lmf0h6m81u4propu0r1s4reh --proxy_host 127.0.0.1 --proxy_port 8080 http://10.10.10.210:8080/</emb>
 To generate a wordlist for usernames we make a curl to search endpoint which contains names of blog users.
+
+
 <emb>curl -v --cookie "PHPSESSID=q7lmf0h6m81u4propu0r1s4reh" http://10.10.10.210:8080/search > site.txt</emb>
 The following will create a list from the output of curl command:
+
+
 <emb>html2dic site.txt >> list.txt</emb>
