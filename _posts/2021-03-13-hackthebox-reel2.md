@@ -4,6 +4,7 @@ Today I'm going to take you around a special machine on hackthebox platform: Ree
 
 It was a hard machine as the statistiques show!
 First we start as usual with running <emb>nmap</emb> to see open ports and services.
+
 <span style="color:blue"><emb># nmap -sV -T4 -oA nmap 10.10.10.210</emb></span>
 
 The result shows a bunch of ports: 80, 443, 8080, 600x.
