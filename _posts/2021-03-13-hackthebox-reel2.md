@@ -37,3 +37,10 @@ The following will create a list from the output of curl command:
 
 
 <span style="color:blue"><emb>html2dic site.txt >> list.txt</emb></span>
+
+You can also use some burp extensions to generate those wordlists: <a href="https://github.com/PortSwigger/wordlist-extractor">exp1</a> or <a href="https://github.com/tinmyowin7/Wordlist-Generator"/>exp2</a>
+
+
+After generating those wordlists we have many tools to perform a password spray attack: Take every username in the user's list and test it against every password in password's list.
+Examples of tools: https://github.com/sensepost/ruler ruler, https://github.com/byt3bl33d3r/SprayingToolkit
+<span style="color:blue"><emb>./atomizer.py owa http://reel2:443/owa passwords.txt users.txt --threads 20 --debug --interval 0:0:2</emb><span>
