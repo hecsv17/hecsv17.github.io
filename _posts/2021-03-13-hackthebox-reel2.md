@@ -86,6 +86,7 @@ We will use nishang and base64 encode it:
 
 And then we send it to get the reverse shell with `-enc` to decrypt it:
 <img src="/src/rev1.png">
+
 We can get the user flag.
 
 Next step is to have administrator access to the box or at least find out a way to read the root.txt flag!
@@ -97,3 +98,5 @@ We can search for specific files or some content that have specific terms like "
 The following command helps us to look for files that end with `.log` extension: 
 
 <span style="color:blue"><emb>get-childitem -path C:\ -File -Recurse -Include *.log -ErrorAction SilentlyContinue -Force</emb></span>
+
+The search shows us a file that contains credentials for a new account: <span style="color:red">jea_test_account:Ab!Q@vcg^%@#1</span>
