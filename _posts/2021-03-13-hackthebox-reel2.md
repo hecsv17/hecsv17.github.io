@@ -114,6 +114,7 @@ All what we have to do is to login as jea_test_account and read the root.txt thr
 To connect to jea we do the following:
 
 <span style="color:blue">
+  
 ```
 $user = "jea_test_account"
   
@@ -126,6 +127,7 @@ PS> $cred = New-Object System.Management.Automation.PSCredential -ArgumentList  
 
 PS> Enter-PSSession -Computer 10.10.10.210 -credential $cred -ConfigurationName jea_test_account -verbose -debug -Authentication Negotiate
 ```
+
 </emb></span>
 
 <img src="/src/root1.png">
