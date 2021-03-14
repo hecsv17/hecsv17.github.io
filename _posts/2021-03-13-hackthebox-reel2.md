@@ -111,7 +111,15 @@ All what we have to do is to login as jea_test_account and read the root.txt thr
 
 To connect to jea we do the following:
 
-<span style="color:blue">$user = "jea_test_account" 
-$pass = ConvertTo-SecureString "Ab!Q@vcg^%@#1" -AsPlainText -Force
-$cred = New-Object System.Management.Automation.PSCredential -ArgumentList  ($user, $pass)
-Enter-PSSession -Computer 10.10.10.210 -credential $cred -ConfigurationName jea_test_account -verbose -debug -Authentication Negotiate</emb></span>
+<span style="color:blue">$user = "jea_test_account"
+  
+
+PS> $pass = ConvertTo-SecureString "Ab!Q@vcg^%@#1" -AsPlainText -Force
+
+
+PS> $cred = New-Object System.Management.Automation.PSCredential -ArgumentList  ($user, $pass)
+
+
+PS> Enter-PSSession -Computer 10.10.10.210 -credential $cred -ConfigurationName jea_test_account -verbose -debug -Authentication Negotiate</emb></span>
+
+<img src="/src/root1.png">
