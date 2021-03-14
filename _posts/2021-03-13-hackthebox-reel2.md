@@ -51,3 +51,12 @@ Examples of tools: <a href="https://github.com/sensepost/ruler">Ruler</a>, <a hr
 
 
 After some time we have a valid credentials: <span style="color:red">s.svensson:Summer2020</span>
+
+
+We login with s.svensson account, and we can see that we have a list of users in owa adress book, an evident tought that come to our mind is to send a phishing email to all users, with an email body set to out attacker machine. 
+
+
+We set our responder as follow: <span style="color:blue"><emb>responder -I tun0 -v</emb></span>
+
+
+A few seconds later we got NTLMv2 hash for a k.svensson, and we launch hashcat to crack that hash.
