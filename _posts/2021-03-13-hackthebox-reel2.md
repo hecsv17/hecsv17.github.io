@@ -103,7 +103,7 @@ The search shows us a file that contains credentials for a new account: <span st
 
 We spent some time reading about JEA (Just Enough Administration), which is a security technology that enables delegated administration for anything managed by PowerShell. Reading the configuration files (C:\Users\k.svensson\Documents\jea_test_account.psrc and C:\Users\k.svensson\Documents\jea_test_account.pssc), we discover that jea_test_account is the only user who can execute a commandlet named `Check-File` which gets the content of a file only if it is inside `D:/` or `C:/ProgramData`
 
-The final step is the create a Junction which is a soft link for folders in Windows (like symbilic links in Linux).
+The final step is the create a Junction which is a soft link for folders in Windows (like symbolic links in Linux).
 
 <span style="color:blue"><emb>New-Item -ItemType Junction -Path 'C:\ProgramData\hecsv' -Target 'C:\Users\Administrator'</emb></span>
 
