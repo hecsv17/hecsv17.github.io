@@ -33,6 +33,8 @@ To generate a wordlist for usernames we make a curl to search endpoint which con
 
 
 <span style="color:blue"><emb>curl -v --cookie "PHPSESSID=q7lmf0h6m81u4propu0r1s4reh" http://10.10.10.210:8080/search > site.txt</emb></span>
+
+
 The following will create a list from the output of curl command:
 
 
