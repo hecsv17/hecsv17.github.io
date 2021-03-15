@@ -6,3 +6,11 @@ title: hecsv17 blog
 	<h1>Hi there, I'm hecsv17!</h1>
 	<p>I'm a cybersecurity engineer, bug bounty hunter and security enthisiast <a href="/about">About me!</a></p>
 </div><!-- /.blurb -->
+
+
+<h1>{{ page.title }}</h1>
+<p class="meta">{{ page.date | date_to_string }}</p>
+
+<div class="post">
+  {{ content }}
+</div>
