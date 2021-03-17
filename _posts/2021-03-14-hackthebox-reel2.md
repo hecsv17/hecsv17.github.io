@@ -10,7 +10,7 @@ First we start as usual with running <emb>nmap</emb> to see open ports and servi
 The result shows a bunch of ports: 80, 443, 8080, 600x.
 
 
-<img src="/src/nmap1.png" width="500" height="600">
+<img src="/src/nmap1.png" width="1000" height="300">
 
 We will start by ports 80 and 443, which only show a default windows IIS server default page. In this case we will launch a directory/files brute force to see if can find some juicy entries.
 
