@@ -1,6 +1,6 @@
 Hello friends!
 Today I'm going to take you around a special machine on hackthebox platform: Reel2
-<img src="/src/reel2.png">
+<img src="/src/reel2.png" width="500" height="600">
 
 It was a hard machine as the statistiques show!
 First we start as usual with running <emb>nmap</emb> to see open ports and services.
@@ -10,7 +10,7 @@ First we start as usual with running <emb>nmap</emb> to see open ports and servi
 The result shows a bunch of ports: 80, 443, 8080, 600x.
 
 
-<img src="/src/nmap1.png">
+<img src="/src/nmap1.png" width="500" height="600">
 
 We will start by ports 80 and 443, which only show a default windows IIS server default page. In this case we will launch a directory/files brute force to see if can find some juicy entries.
 
@@ -87,7 +87,7 @@ We will use nishang and base64 encode it:
 
 
 And then we send it to get the reverse shell with `-enc` to decrypt it:
-<img src="/src/rev1.png">
+<img src="/src/rev1.png" width="500" height="600">
 
 We can read the user.txt flag.
 
@@ -127,11 +127,11 @@ PS> $cred = New-Object System.Management.Automation.PSCredential -ArgumentList  
 PS> Enter-PSSession -Computer 10.10.10.210 -credential $cred -ConfigurationName jea_test_account -verbose -debug -Authentication Negotiate
 ```
 
-<img src="/src/root2.png">
+<img src="/src/root2.png" width="500" height="600">
 
 `Check-File C:\programdata\hecsv\Desktop\root.txt`
 
-<img src="/src/root3.png">
+<img src="/src/root3.png" width="500" height="600">
 
 That's it for today, hope you enjoyed the read!
 
