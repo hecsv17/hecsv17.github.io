@@ -87,7 +87,7 @@ We will use nishang and base64 encode it:
 
 
 And then we send it to get the reverse shell with `-enc` to decrypt it:
-<img src="/src/rev1.png" width="500" height="600">
+<img src="/src/rev1.png" width="1000" height="300">
 
 We can read the user.txt flag.
 
@@ -127,11 +127,11 @@ PS> $cred = New-Object System.Management.Automation.PSCredential -ArgumentList  
 PS> Enter-PSSession -Computer 10.10.10.210 -credential $cred -ConfigurationName jea_test_account -verbose -debug -Authentication Negotiate
 ```
 
-<img src="/src/root2.png" width="500" height="600">
+<img src="/src/root2.png" width="1000" height="300">
 
 `Check-File C:\programdata\hecsv\Desktop\root.txt`
 
-<img src="/src/root3.png" width="500" height="600">
+<img src="/src/root3.png" width="1000" height="300">
 
 That's it for today, hope you enjoyed the read!
 
