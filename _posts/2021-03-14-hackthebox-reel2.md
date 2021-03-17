@@ -83,13 +83,13 @@ Next we want to get a reverse shell on the box.
 We will use nishang and base64 encode it:
 
 
-<span style="color:blue"><emb># cat Invoke-PowershellTcpOnLine.ps1 | iconv -t utf16le | base64 -w 0</emb></span>
+<span style="color:blue"><emb># cat Invoke-PowershellTcpOnLine.ps1 | iconv -t utf-16le | base64 -w 0</emb></span>
 
 
 And then we send it to get the reverse shell with `-enc` to decrypt it:
 <img src="/src/rev1.png">
 
-We can get the user flag.
+We can read the user.txt flag.
 
 Next step is to have administrator access to the box or at least find out a way to read the root.txt flag!
 
