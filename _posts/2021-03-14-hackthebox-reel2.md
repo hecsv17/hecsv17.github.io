@@ -1,6 +1,6 @@
 Hello friends!
 Today I'm going to take you around a special machine on hackthebox platform: Reel2
-<img src="/src/reel2.png" width="500" height="600">
+<img src="/src/reel2.png">
 
 It was a hard machine as the statistiques show!
 First we start as usual with running <emb>nmap</emb> to see open ports and services.
@@ -131,7 +131,7 @@ PS> Enter-PSSession -Computer 10.10.10.210 -credential $cred -ConfigurationName 
 
 `Check-File C:\programdata\hecsv\Desktop\root.txt`
 
-<img src="/src/root3.png" width="1000" height="300">
+<img src="/src/root3.png">
 
 That's it for today, hope you enjoyed the read!
 
