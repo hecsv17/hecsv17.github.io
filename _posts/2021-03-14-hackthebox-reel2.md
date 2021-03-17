@@ -129,6 +129,9 @@ PS> Enter-PSSession -Computer 10.10.10.210 -credential $cred -ConfigurationName 
 
 <img src="/src/root2.png" width="1000" height="150">
 
+
+And get access the root.txt via the available Check-file function:
+
 `Check-File C:\programdata\hecsv\Desktop\root.txt`
 
 <img src="/src/root3.png">
