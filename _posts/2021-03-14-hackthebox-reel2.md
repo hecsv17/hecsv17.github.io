@@ -127,7 +127,7 @@ PS> $cred = New-Object System.Management.Automation.PSCredential -ArgumentList  
 PS> Enter-PSSession -Computer 10.10.10.210 -credential $cred -ConfigurationName jea_test_account -verbose -debug -Authentication Negotiate
 ```
 
-<img src="/src/root2.png" width="1000" height="200">
+<img src="/src/root2.png" width="1000" height="150">
 
 `Check-File C:\programdata\hecsv\Desktop\root.txt`
 
